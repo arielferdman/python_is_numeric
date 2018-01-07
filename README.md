@@ -10,7 +10,7 @@ strextnd.is_numeric returns 1 if str represents a number
 and 0 if it does not.
 strextnd.is_numeric also returns 0 for an empty string.
 
-exmaple usage:
+example usage:
 
 from strextnd import is_numeric
 
