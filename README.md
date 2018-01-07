@@ -12,11 +12,16 @@ strextnd.is_numeric also returns 0 for an empty string.
 
 exmaple usage:
 
->>> from strextnd import is_numeric
->>> is_numeric('4')
-1
->>> is_numeric('abc')
-0
->>> is_numeric('545.45')
+from strextnd import is_numeric
+
+is_numeric('4')
+
 1
 
+is_numeric('abc')
+
+0
+
+is_numeric('545.45')
+
+1
