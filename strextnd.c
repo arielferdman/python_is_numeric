@@ -6,6 +6,10 @@ int _is_numeric(const char *str) {
 	int cursor;
 	int ascii_value;
 	
+	if (*(str) == 0) {
+	  return 0;
+	}
+	
 	for (cursor = 0; cursor < str_len; cursor++) {
 		ascii_value = (int)*(str + cursor);
 		if (ascii_value == 46 && dot_flag == 1) {
