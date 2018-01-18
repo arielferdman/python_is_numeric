@@ -54,7 +54,12 @@ static PyObject* is_numeric(PyObject* self, PyObject *args) {
       return Py_BuildValue("s", "is_numeric is expecting a single string argument");
    }
 
-   return Py_BuildValue("i", _is_numeric(str));
+   if(_is_numeric(str)) {
+	   return Py_True;
+   }
+   else {
+	   return Py_False;
+   }
 }
 
 static PyMethodDef strextnd_methods[] = {
