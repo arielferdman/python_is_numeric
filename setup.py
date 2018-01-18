@@ -5,7 +5,7 @@ from distutils.core import setup, Extension
 strextnd_module = Extension('strextnd', sources = ['strextnd.c'])
 
 setup(name='strextnd',
-      version='0.1',
+      version='0.2',
       description='A Module written in C that extends the python3 str library',
       author = 'Ariel Ferdman',
       author_email = 'arielxcon@gmail.com',

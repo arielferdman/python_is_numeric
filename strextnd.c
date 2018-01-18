@@ -1,21 +1,30 @@
 #include <Python.h>
 
-int _is_numeric(const char *str) {
-	int str_len = strlen(str);
+int is_numeric(char *str) {
 	int dot_flag = 0;
+	int all_zeros = 1;
+	int leading_minus = 0;
 	int cursor;
 	int ascii_value;
 	
-	if (*(str) == 0) {
+	if (((int)*(str) < 48 || (int)*(str) > 57) && *(str) != 45) {
 	  return 0;
 	}
 	
-	for (cursor = 0; cursor < str_len; cursor++) {
+	if ((int)*(str) == 45 && (int)*(str + 1) == 48 && *(str + 2) == 0) {
+	  return 0;
+	}
+	
+	if ((int)*(str) == 45) {
+	  leading_minus = 1;
+	}
+	
+	for (cursor = 1; *(str + cursor) != 0; cursor++) {
 		ascii_value = (int)*(str + cursor);
 		if (ascii_value == 46 && dot_flag == 1) {
 			return 0;
 		}
-		if ((ascii_value == 46 && cursor == 0) || (ascii_value == 46 && cursor == str_len - 1)) {
+		if (ascii_value == 46 && *(str + cursor + 1) == 0) {
 			return 0;
 		}
 		if (ascii_value == 46 && dot_flag == 0) {
@@ -25,6 +34,14 @@ int _is_numeric(const char *str) {
 		if (ascii_value < 48 || ascii_value > 57) {
 			return 0;
 		}
+		
+		if (ascii_value != 48) {
+		  all_zeros = 0;
+		}
+	}
+	
+	if (all_zeros == 1 && leading_minus == 1) {
+	  return 0;
 	}
 	
 	return 1;
