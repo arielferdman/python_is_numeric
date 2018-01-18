@@ -11,6 +11,6 @@ setup(name='strextnd',
       author_email = 'arielxcon@gmail.com',
       ext_modules=[strextnd_module],
       url = 'https://github.com/arielferdman/strextnd',
-      download_url = 'https://github.com/arielferdman/strextnd/archive/0.1.tar.gz',
+      download_url = 'https://github.com/arielferdman/strextnd/archive/0.2.tar.gz',
       keywords = ['string', 'is_numeric', 'float'],
       classifiers = [],)
