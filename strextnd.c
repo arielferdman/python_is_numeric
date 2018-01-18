@@ -1,6 +1,6 @@
 #include <Python.h>
 
-int is_numeric(char *str) {
+int _is_numeric(char *str) {
 	int dot_flag = 0;
 	int all_zeros = 1;
 	int leading_minus = 0;
